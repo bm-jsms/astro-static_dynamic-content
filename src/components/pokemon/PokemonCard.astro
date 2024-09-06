@@ -19,7 +19,7 @@ const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprit
     ]
   }
 >  
-  <img class=`${big ? "w-26 h-26" : "w-16 h-16"}` src={imageUrl} alt={name}>
+  <img transition:name={`${name}-image`} class=`${big ? "w-26 h-26" : "w-16 h-16"}` src={imageUrl} alt={name}>
 
-  <span class=`capitalize ${big ? "text-3xl" : ""}`> #{id} {name}</span>
+  <span class={`capitalize ${big ? "text-3xl" : ""}`}> #{id} {name}</span>
 </a> 
