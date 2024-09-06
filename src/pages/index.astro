@@ -1,13 +1,13 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-
-
-import type { PokemonListResponse } from "../interfaces/pokemon-list.response"
 import PokemonCard from "../components/pokemon/PokemonCard.astro";
 
-const title = "Pokemon Static | Home"
-const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
+import type { PokemonListResponse } from "../interfaces/pokemon-list.response"
+
+const res = await fetch('https://pokeapi.co/api/v2/pokemon')
 const data = await res.json() as PokemonListResponse
+
+const title = "Pokemon Static | Home"
 ---
 
 <MainLayout title={title}>
@@ -18,8 +18,8 @@ const data = await res.json() as PokemonListResponse
 		class='grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-3'
 	>
 	
-	{data.results.map(({name, url}) => <PokemonCard name={name} url={url}/>)}
-</section>
+		{data.results.map(({name, url}) => <PokemonCard name={name} url={url}/>)}
+	</section>
 	
 </MainLayout>
 
