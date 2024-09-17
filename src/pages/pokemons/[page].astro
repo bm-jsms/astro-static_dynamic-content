@@ -11,7 +11,7 @@ export const getStaticPaths = (async({ paginate }) => {
   const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=151');
   const {results} = (await res.json()) as PokemonListResponse;
   
-  return paginate(results, {pageSize: 10});
+  return paginate(results, {pageSize: 20});
 }) satisfies GetStaticPaths;
 
 const title = "Pokemon Static | Home";
