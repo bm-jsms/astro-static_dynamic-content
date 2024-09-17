@@ -20,30 +20,42 @@ const { page } = Astro.props;
 ---
 
 <MainLayout title={title}>
-  <h1 class='text-3xl text-blue-500'>Astro</h1>
+  <h1 class='text-3xl text-blue-500'>List of pokemons</h1>
 	<hr />
   <section   
     area-label='"Pokemon List'
     class='grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-3'
-	>
-	
+	> 
 	  {page.data.map(({name, url}) => <PokemonCard name={name} url={url}/>)}
   </section>
 
   <section class='flex px-10 mt-10 gap-2 items-center justify-between'>
-    <a class='btn' href={page.url.prev} >Prev</a>
-      <span>Page {page.currentPage} of {page.lastPage}</span>
-    <a class='btn' href={page.url.next} >Next</a>
+    <a class:list={[
+          'btn',
+          {
+            disabled: !page.url.prev
+          }
+      ]} href={page.url.prev} >Prev</a>
+
+    <span>Page {page.currentPage} of {page.lastPage}</span>
+
+    <a class:list={[
+        'btn',
+        {
+          disabled: !page.url.next
+        }
+      ]
+    } href={page.url.next} >Next</a>
   </section>
 	
 </MainLayout>
 
 <style>
   .btn {
-    @apply bg-blue-500 p-2 text-white rounded-md
+    @apply bg-blue-500 p-2 px-4 text-gray-100 rounded-md hover:bg-blue-600 font-medium text-lg
   }
 
   .disabled {
-    @apply bg-gray-600 text-gray-400
+    @apply bg-gray-600 p-2 px-4 text-gray-400
   }
 </style>
