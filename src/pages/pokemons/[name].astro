@@ -4,6 +4,7 @@ import type { PokemonListResponse } from "@interfaces/pokemon-list.response";
 
 import MainLayout from "@layouts/MainLayout.astro";
 import PokemonCard from "@components/pokemon/PokemonCard.astro";
+import Title from "@shared/Title.astro";
 
 export const getStaticPaths = (async () => {
   const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
@@ -33,7 +34,9 @@ const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprit
   <section class='mt-10 mx-10 flex flex-col justify-center items-center'>
     <div>
       <a href="/">Back</a>
-      <h1 class='text-3xl capitalize'> { name } </h1>
+      <Title>
+        {name}
+      </Title>
     </div>
     <PokemonCard name={name} url={url} big={true} />
 
