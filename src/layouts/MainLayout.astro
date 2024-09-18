@@ -1,4 +1,5 @@
 ---
+import NavBar from '@shared/NavBar.astro'
 import { ViewTransitions } from 'astro:transitions'
 import { sideInfo } from 'src/consts/side-info'
 
@@ -32,8 +33,9 @@ const { title = sideInfo.title, description = sideInfo.description , image } = A
 
 		<ViewTransitions />
 	</head>
-	<body class='bg-slate-800 text-slate-100 m-auto max-w-3xl'>
-		<main class='mt-10'>
+	<body class='bg-slate-800 text-slate-100 '>
+		<NavBar />
+		<main class='mt-10 m-auto max-w-3xl'>
 			<slot />
 		</main>
 	</body>
