@@ -24,7 +24,7 @@ export const FavoritePokemonCard: Component<Props> = ({ pokemon }) => {
 			<div class='flex flex-col justify-center items-center'>
 				<a
 					href={`/pokemons/${pokemon.name}`}
-					class='border-2 rounded-lg p-2 bg-emerald-300/30 border-gray-400 hover:bg-emerald-300/40 hover:border-gray-500'
+					class='border-2 rounded-lg p-2 bg-gray-300/10 border-gray-500 hover:bg-gray-300/30 hover:border-gray-300'
 				>
 					<img
 						src={imgSrc}
