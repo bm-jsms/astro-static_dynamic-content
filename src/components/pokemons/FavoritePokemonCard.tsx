@@ -22,7 +22,10 @@ export const FavoritePokemonCard: Component<Props> = ({ pokemon }) => {
 	return (
 		<Show when={isVisible()}>
 			<div class='flex flex-col justify-center items-center'>
-				<a href={`/pokemons/${pokemon.name}`}>
+				<a
+					href={`/pokemons/${pokemon.name}`}
+					class='border-2 rounded-lg p-2 bg-emerald-300/30 border-gray-400 hover:bg-emerald-300/40 hover:border-gray-500'
+				>
 					<img
 						src={imgSrc}
 						alt={pokemon.name}
@@ -30,11 +33,14 @@ export const FavoritePokemonCard: Component<Props> = ({ pokemon }) => {
 						height='96'
 						style={`view-transition-name: ${pokemon.name}-image`}
 					/>
-					<p class='capitalize'>
+					<p class='capitalize font-medium'>
 						#{pokemon.id} {pokemon.name}
 					</p>
 				</a>
-				<button onClick={deleteFavoritePokemon} class='text-red-400'>
+				<button
+					onClick={deleteFavoritePokemon}
+					class='text-gray-100 font-semibold tracking-wider hover:bg-red-600 bg-red-500 p-1 px-3 rounded-lg mt-2'
+				>
 					Delete
 				</button>
 			</div>
