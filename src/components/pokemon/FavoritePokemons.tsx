@@ -1,3 +1,4 @@
+import { FavoritePokemonCard } from '@components/pokemons/FavoritePokemonCard';
 import type { FavoritePokemon } from '@interfaces/favoritePokemon';
 import { For, createSignal } from 'solid-js';
 
@@ -14,7 +15,9 @@ export const FavoritePokemons = () => {
 
 	return (
 		<div class='grid grid-cols-2 sm:grid-cols-4'>
-			<For each={pokemons()}>{(pokemon) => <h2>{pokemon.name}</h2>}</For>
+			<For each={pokemons()}>
+				{(pokemon) => <FavoritePokemonCard pokemon={pokemon} />}
+			</For>
 		</div>
 	);
 };
