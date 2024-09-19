@@ -33,15 +33,15 @@ const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprit
   image={imageUrl} 
 >
   <section class='mt-10 mx-10 flex flex-col justify-center items-center'>
-    <div class='flex flex-row'>
+    <button onclick='history.back()' class='text-gray-200 text-lg font-medium p-1 px-3 rounded-lg bg-blue-600 hover:bg-blue-700'>Back</button>
+    <div class='flex flex-row items-center justify-center mb-4'>
       <div>
-        <button onclick='history.back()' class='text-blue-500'>Back</button>
         <Title>
           {name}
         </Title>  
       </div>
       
-      <button id='btn-favorite' class='ml-4' data-name={name} data-id={id}>
+      <button id='btn-favorite' class='ml-4 mt-2' data-name={name} data-id={id}>
         <Icon data-outline name='heart-outline' size={50} />
         <Icon data-full class='hidden' name='heart-full' size={50} />
       </button>
