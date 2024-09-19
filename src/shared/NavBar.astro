@@ -22,13 +22,13 @@ const currentPath = Astro.url.pathname
     {
       Links.map(({ name, url }) => (
         <div>
-          <a href={url} class="text-gray-800 dark:text-gray-200 mx-1.5 sm:mx-6">
+          <a href={url} class="text-gray-200 font-semibold mx-1.5 sm:mx-6 text-lg hover:text-blue-300">
             {name}
           </a>
           {
             currentPath === url 
-              ? <div transition:name='menu-line' class='border-b-2 border-blue-500 mx-4'></div> 
-              : <div class='mx-4 border-b-2 border-transparent'></div>
+              ? <div transition:name='menu-line' class='border-b-4 border-blue-500 mx-4'></div> 
+              : <div class='mx-4 border-b-4 border-transparent'></div>
           }
         </div>
       ))
